@@ -1,0 +1,591 @@
+/**
+ * Bridge MLS Listings Plugin Styles
+ * Mobile-first responsive design
+ */
+
+/* Base Variables */
+:root {
+    --primary-color: #007cba;
+    --primary-hover: #005a87;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --gray-light: #f8f9fa;
+    --gray-medium: #e9ecef;
+    --gray-dark: #6c757d;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Grid Layout - Mobile First */
+.bridge-mls-listings {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.mls-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Property Card - Enhanced Mobile Design */
+.mls-property-card {
+    background: #fff;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.mls-property-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Property Image - Better Mobile Display */
+.property-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mls-property-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-image.no-image {
+    background: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.property-image .placeholder {
+    color: var(--gray-dark);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Property Details - Mobile Optimized */
+.property-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 0 10px 0;
+}
+
+.property-address {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Property Features - Better Mobile Layout with Icons */
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 15px 0;
+    border-top: 1px solid var(--gray-medium);
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.property-features .feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.property-features .feature svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.property-features .feature strong {
+    color: #333;
+    margin-right: 4px;
+}
+
+/* No image placeholder styling */
+.property-image .placeholder svg {
+    width: 60px;
+    height: 60px;
+    stroke: var(--gray-dark);
+    margin-bottom: 10px;
+}
+
+/* Error state with icon */
+.mls-error svg {
+    width: 48px;
+    height: 48px;
+    stroke: #c33;
+    margin-bottom: 15px;
+}
+
+/* Property Type and Remarks */
+.property-type {
+    font-size: 14px;
+    color: var(--gray-dark);
+    margin: 10px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.property-subtype {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 10px 0;
+    font-style: italic;
+}
+
+.property-remarks {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+/* View Details Button - Touch Friendly */
+.btn-view-details {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    transition: var(--transition);
+    touch-action: manipulation;
+}
+
+.btn-view-details:hover,
+.btn-view-details:focus {
+    background: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Search Form - Mobile Optimized */
+.bridge-mls-search-form {
+    background: var(--gray-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-field-wide {
+    grid-column: 1 / -1;
+}
+
+.search-field label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.search-field input,
+.search-field select {
+    padding: 12px 16px;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    background: #fff;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,124,186,0.1);
+}
+
+/* Select2 Mobile Optimizations */
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    min-height: 44px;
+    background-color: #fff;
+    padding: 4px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,124,186,0.1);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: var(--gray-medium);
+    border: 1px solid #adb5bd;
+    color: #495057;
+    padding: 5px 10px;
+    margin: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.select2-dropdown {
+    border: 2px solid var(--gray-medium);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.select2-search--dropdown .select2-search__field {
+    padding: 12px 16px;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+.select2-results__option {
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+/* Button Group - Mobile Stack */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Search and Clear Buttons - Touch Optimized */
+.btn-search,
+.btn-clear {
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    touch-action: manipulation;
+}
+
+.btn-search {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-search:hover,
+.btn-search:focus {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-clear {
+    background: #fff;
+    color: var(--gray-dark);
+    border: 2px solid var(--gray-medium);
+}
+
+.btn-clear:hover,
+.btn-clear:focus {
+    background: var(--gray-light);
+    color: #333;
+    border-color: var(--gray-dark);
+}
+
+/* Results Count */
+.mls-results-count {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.mls-results-count p {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Property Detail Modal - Mobile Optimized */
+.property-detail-modal {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.property-detail-modal h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.property-detail-address {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.property-images {
+    margin: 20px -20px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.property-images img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+}
+
+.property-info {
+    background: var(--gray-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+.property-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.property-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.property-info p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.property-info p:last-child {
+    border-bottom: none;
+}
+
+.property-info p strong {
+    color: #333;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.property-info p span {
+    text-align: right;
+    flex: 1;
+}
+
+/* Loading States */
+.mls-loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-dark);
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--gray-medium);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.mls-error {
+    background: #fee;
+    border: 2px solid #fcc;
+    color: #c33;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Field Help Text */
+.field-help {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--gray-dark);
+    font-style: italic;
+}
+
+/* Loading Notice */
+.loading-notice {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--gray-dark);
+    font-style: italic;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .mls-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .search-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .button-group {
+        flex-direction: row;
+    }
+    
+    .btn-search,
+    .btn-clear {
+        width: auto;
+        min-width: 150px;
+    }
+    
+    .property-detail-modal h2 {
+        font-size: 28px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .mls-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .search-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .property-image {
+        height: 220px;
+    }
+    
+    .bridge-mls-listings {
+        padding: 0;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .mls-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn-view-details,
+    .btn-search,
+    .btn-clear {
+        padding: 16px 32px;
+        font-size: 17px;
+    }
+    
+    .search-field input,
+    .search-field select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 14px 18px;
+    }
+}
+
+/* Accessibility Improvements */
+.btn-view-details:focus,
+.btn-search:focus,
+.btn-clear:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Print Styles */
+@media print {
+    .bridge-mls-search-form,
+    .btn-view-details {
+        display: none;
+    }
+    
+    .mls-property-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}
